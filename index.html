@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Hometown - Qingdao</title>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>My Hometown - Qingdao</h1>
+
+        <p class="course">
+            Liwen Tan · SSCI 591 · Web & Mobile GIS · Fall 2026
+        </p>
+
+        <!-- Day.js will create the date here -->
+        <p id="current-date"></p>
+
+    </header>
+
+
+    <!-- About Me -->
+    <section>
+
+        <h2>About Me</h2>
+
+        <div class="about-section">
+
+            <div class="about-text">
+
+                <p>
+                    Hi, my name is Liwen. I am a graduate student at USC, 
+                    and my major is Geographic Information Science and Technology.
+                    I am interested in GIS, maps, and spatial data, so
+                    I created this web page to introduce my hometown,
+                    Qingdao, and share some of the places that represent
+                    the city.
+                </p>
+
+            </div>
+
+            <img class="portrait"
+                 src="images/photo.jpg"
+                 alt="A photo of Liwen">
+
+        </div>
+
+    </section>
+
+
+    <!-- Qingdao Introduction -->
+    <section class="hometown-section">
+
+        <h2>About Qingdao</h2>
+
+        <img class="qingdao-photo"
+             src="images/qingdao.jpg"
+             alt="A view of Qingdao">
+
+        <p>
+            Qingdao is my hometown, which is a coastal city in Shandong Province
+            in eastern China. Qingdao is located along the Yellow Sea and it is
+            well known for its beaches, seafood, and beautiful coastal
+            sceneries. The city has an interesting mix of modern buildings
+            and older European-style architecture, especially for areas
+            close to the coast.
+        </p>
+
+        <p>
+            Qingdao has many famous places to visit, suich as Zhanqiao
+            Pier, Badaguan Scenic Area, May Fourth Square, and Laoshan
+            Mountain. The city is also famous for Tsingtao Beer, which
+            originated in Qingdao and it has already become one of the city's most
+            recognizable products.
+        </p>
+
+        <p>
+            What I like most about Qingdao is the combination of the ocean,
+            mountains, urban areas, and suitable for human living climate. The city
+            has both natural scenery and modern city life. Since I grew
+            up in Qingdao, it is also a very special place for me and holds
+            many of my childhood memories.
+        </p>
+
+    </section>
+
+
+    <!-- Qingdao Attractions -->
+    <section class="attractions-section">
+
+        <h2>Places to Visit in Qingdao</h2>
+
+        <p>
+            Qingdao has many different attractions, from historic
+            architecture and coastal landmarks to modern public spaces
+            and natural landscapes. Here four places show different
+            sides of the city.
+        </p>
+
+
+        <!-- Extra JavaScript Interaction -->
+        <button id="toggle-attractions">
+            Hide Attractions
+        </button>
+
+        <p id="toggle-message">
+            The attraction table is currently visible.
+        </p>
+
+
+        <!-- Attractions Table -->
+        <table class="attractions-table"
+               id="attractions-table">
+
+            <thead>
+
+                <tr>
+                    <th>Attraction</th>
+                    <th>Introduction</th>
+                    <th>Photo</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <!-- Zhanqiao Pier -->
+                <tr>
+
+                    <td data-label="Attraction">
+                        Zhanqiao Pier
+                    </td>
+
+                    <td data-label="Introduction">
+                        Zhanqiao Pier is one of the most recognizable
+                        landmarks in Qingdao. It is located in the old
+                        downtown area into Qingdao Bay and offers views
+                        of the coastline and city skyline. The pier has
+                        a long history and it connected with the
+                        development of modern Qingdao.
+                    </td>
+
+                    <td data-label="Photo">
+
+                        <img src="images/zhanqiao.jpg"
+                             alt="Zhanqiao Pier in Qingdao"
+                             class="attraction-photo">
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Badaguan -->
+                <tr>
+
+                    <td data-label="Attraction">
+                        Badaguan Scenic Area
+                    </td>
+
+                    <td data-label="Introduction">
+                        Badaguan is a historic neighborhood near the coast.
+                        It is known for its tree-lined streets and buildings
+                        with different European architectural styles.
+                        The area is popular for walking, photography,
+                        and enjoying the quieter side of Qingdao.
+                    </td>
+
+                    <td data-label="Photo">
+
+                        <img src="images/badaguan.jpg"
+                             alt="Badaguan Scenic Area in Qingdao"
+                             class="attraction-photo">
+
+                    </td>
+
+                </tr>
+
+
+                <!-- May Fourth Square -->
+                <tr>
+
+                    <td data-label="Attraction">
+                        May Fourth Square
+                    </td>
+
+                    <td data-label="Introduction">
+                        May Fourth Square is a large public square in the
+                        south part of Qingdao. One of its most famous
+                        landmarks is the red sculpture called
+                        "The Wind of May." The square is located next to
+                        the coast and is surrounded by modern buildings,
+                        which shows the combination of modern city and natural scenery.
+                    </td>
+
+                    <td data-label="Photo">
+
+                        <img src="images/mayfourth.jpg"
+                             alt="May Fourth Square in Qingdao"
+                             class="attraction-photo">
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Laoshan -->
+                <tr>
+
+                    <td data-label="Attraction">
+                        Laoshan Mountain
+                    </td>
+
+                    <td data-label="Introduction">
+                        Laoshan Mountain is located east of the main urban
+                        area of Qingdao and combines mountain landscapes
+                        with views of the Yellow Sea. It is known for its
+                        hiking routes, natural scenery, and Taoist culture.
+                    </td>
+
+                    <td data-label="Photo">
+
+                        <img src="images/laoshan.jpg"
+                             alt="Laoshan Mountain in Qingdao"
+                             class="attraction-photo">
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- Interactive Map -->
+    <section class="map-section">
+
+        <h2>Qingdao on the Map</h2>
+
+        <p>
+            Use the interactive map below to move between Qingdao
+            and USC in Los Angeles.
+        </p>
+
+        <div id="map"></div>
+
+
+        <button id="home-button">
+            Go to Qingdao
+        </button>
+
+
+        <button id="usc-button">
+            Go to USC
+        </button>
+
+
+        <p id="status">
+            Choose a location.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Liwen Tan · SSCI 591 · Fall 2026
+        </p>
+
+    </footer>
+
+
+    <!-- Leaflet JavaScript Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+    <!-- Day.js JavaScript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+
+    <!-- My JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
